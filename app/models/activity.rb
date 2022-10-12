@@ -1,6 +1,6 @@
-class Entity < ApplicationRecord
+class Activity < ApplicationRecord
     belongs_to :author, class_name: 'User'
-    has_many :categories_entities, dependent: :destroy
+    has_many :categories_activities, dependent: :destroy
   
     validates :name, presence: { message: "Name can't be null" }, length: { maximum: 250 }
     validates :amount, presence: { message: "Amount can't be null" }
