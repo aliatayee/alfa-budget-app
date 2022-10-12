@@ -1,0 +1,19 @@
+<section class="text-gray-400 bg-gray-900 body-font ">
+    <div class="container px-5 py-2 mx-auto">
+    <% if current_user %>
+        <p class="p-5 bg-gray-800 rounded-md text-green-300">Hi, <%= current_user.name %>!   You have successfully logged in. Take a tour around!</p>
+    <% else %>
+        <p>      
+            <%= link_to "Sign In", new_user_session_path %>
+            <%= link_to "Sign Up", new_user_registration_path %>
+        </p>
+
+    <% end %>
+    <br />
+        <div class="flex flex-wrap -m-2">
+            <% @users.each do |user| %>
+                <%= render partial: "user_card", locals: {user: user} %>
+            <% end %>
+        </div>
+    </div>
+</section>
