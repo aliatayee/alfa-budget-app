@@ -66,3 +66,6 @@ group :development do
   # gem "spring"
 end
 
+gem 'cancancan'
+gem "font-awesome-sass", "~> 6.2.0"
+gem "tailwindcss-rails", "~> 2.0"

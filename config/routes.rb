@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "users#index"
+  root "splash#index"
   resources :users
   resources :categories
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
