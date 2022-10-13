@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg shadow-md py-2 bg-primary-500 relative flex items-center w-full justify-between  h-16 max-h-full flex">
+  <div class="px-6 flex flex-wrap items-center justify-between">
+    <div class="flex items-center text-white">
+      <%= link_to icon('fa-solid', 'arrow-left'), url_for(:back) %>
+    </div>
+  </div>
+  <div class="px-6  flex flex-wrap items-center justify-between">
+    <div class="flex items-center text-white">
+      <%= name.upcase %>
+    </div>
+  </div>
+  <div class="px-6  flex flex-wrap items-end justify-between">
+    <div class="flex items-center text-white">
+      <input type="submit" value=<%= btn %> form="new_user">
+    </div>
+  </div>
+</div>
+</nav>
+<div class="mx-auto container w-full flex text-left mt-3 justify-center">
+  <% if notice %>
+    <div class="notice bg-green-100 rounded-lg py-5 px-6 mb-3 text-base inline-flex flex-wrap items-center w-3/4 alert-dismissible fade show" role="alert">
+      <strong class="mr-1">Notice: </strong> <%= notice %>
+    </div>
+  <%end%>
+  <% if  alert %>
+    <div class="alert bg-red-100 rounded-lg py-5 px-6 mb-3 text-base inline-flex flex-wrap items-center w-3/4 alert-dismissible fade show" role="alert">
+      <strong class="mr-1">Alert: </strong> <%= alert %>
+    </div>
+  <%end%>
+</div>

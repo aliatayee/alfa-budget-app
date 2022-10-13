@@ -1,7 +1,6 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Categories</h1>
 
+ <%= render partial: 'layouts/nav/navbar_auth',  locals: {path: url_for(:back),name: 'Categories', arrow_back: false} %>
 <div id="categories">
   <% @categories.each do |category| %>
     <%= render category %>
