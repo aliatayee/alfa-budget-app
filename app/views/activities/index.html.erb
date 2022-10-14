@@ -1,4 +1,4 @@
-<%= render partial: 'layouts/nav/navbar_auth',  locals: {path: url_for(:back),name: 'Activities', arrow_back: true} %>
+<%= render partial: 'layouts/nav/navbar_auth',  locals: {path: url_for(root_path),name: 'Activities', arrow_back: true} %>
 <span class="w-full flex justify-center shadow-md  bg-white pt-3 pb-3"><strong>Total Amount: </strong> <%=number_to_currency @total%></span>
 <div id="activities" class="h-full flex max-h-full overflow-y-auto flex-col flex-grow pb-48">
   <% @activities.each do |activity| %>
