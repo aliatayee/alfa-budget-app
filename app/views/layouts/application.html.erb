@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BudgetApp</title>
+    <title>ALFA Budget App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application" %>
   </head>
-
-  <body>
-  <div class="mx-auto container w-full flex text-left">
-        <% if notice %>
-          <p class="notice p-5 bg-gray-800 w-full rounded-md text-green-300"><%= notice %></p>
-        <%end%>
-        <% if  alert %>
-          <p class="alert p-5 bg-gray-800 w-full rounded-md text-green-300"><%= alert %></p>
-        <%end%>
-      </div>
-    <%= yield %>
+  <body class="bg-gray">
+    <section class="w-full h-screen bg-gray overflow-hidden">
+      <%= yield %>
+    </section>
   </body>
 </html>

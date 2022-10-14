@@ -1,9 +1,4 @@
-<h1>New category</h1>
-
-<%= render "form", category: @category %>
-
-<br>
-
-<div>
-  <%= link_to "Back to categories", categories_path %>
+ <%= render partial: 'layouts/nav/navbar_auth',  locals: {path: categories_path, name: 'Add Category', arrow_back: true} %>
+<div class="mx-auto md:w-2/3 w-full">
+  <%= render "form", category: @category %>
 </div>
