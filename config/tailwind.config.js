@@ -26,6 +26,7 @@ module.exports = {
       't-main': '#434b54',
       'divider': '#d9d9d9',
       'gray': '#f4f4f4',
+      'gray-b': '#b9b9b9',
       'red': {
         300: 'rgb(252 165 165)',
         100: 'rgb(254 226 226)',
