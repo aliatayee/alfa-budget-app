@@ -1,0 +1,9 @@
+<div class="p-2 lg:w-1/2 md:w-1/2 w-full">
+                    <%= link_to user_path(user.id) do %>
+                        <div class="h-full flex items-center border-gray-800 border p-4 rounded-lg">
+                            <div class="flex-grow">
+                                <h2 class="text-white title-font font-medium"><%= user.name %></h2>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>

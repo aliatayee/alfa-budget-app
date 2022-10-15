@@ -1,0 +1,38 @@
+<div class="">
+  <div class="min-w-screen flex pt-5 justify-center font-sans overflow-hidden">
+    <div class="block rounded-lg shadow-lg bg-white px-6 py-8 md:px-12 lg:w-1/2 h-full mb-5 mt-5">
+      <h2 class="font-semibold text-center mb-5">Add New Transaction</h2>
+      <%= form_with model: @activity,scope: :activity, method:'post', url: activities_path() do |form| %>
+        <% if @activity.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(@activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+            <ul>
+              <% @activity.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="p-2 h-32 flex max-h-32 overflow-y-auto flex-col flex-grow ">
+          <%= collection_check_boxes :activity, :category_ids, current_user.categories.all, :id, :name, include_hidden: false, required: true do |b| %>
+            <div class="">
+              <%= b.check_box() %>
+              <%= b.label() %>
+            </div>
+          <% end %>
+        </div>
+        <div class="relative ">
+          <%= form.label :name, class: "leading-7 text-sm text-gray-400" %>
+          <%= form.text_field :name, required: true, autofocus: true,class: "form-control block w-full px-3 py-1.5 mb-4 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-b rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>
+        </div>
+        <div class="relative ">
+          <%= form.label :amount, class: "leading-7 text-sm text-gray-400" %>
+          <%= form.number_field :amount , required: true,class: "form-control block w-full px-3 py-1.5 mb-4 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-b rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>
+        </div>
+        <div class="actions flex justify-between">
+          <%= form.submit "Save", class: " px-6 py-2.5 mb-6 w-1/3 bg-primary-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

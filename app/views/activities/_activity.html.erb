@@ -1,0 +1,21 @@
+  
+<div class="w-full flex justify-center">
+  <div class="w-full mb-4 ">
+    <div class="w-full lg:max-w-lg h-24 md:mx-auto mt-auto  flex text-center bg-white rounded-md shadow-md ">
+       <div class="h-24 w-32 p-3 flex ">
+          <img alt=<%= @category.name%> src=<%= @category.icon%>  class=" bg-gray-100 object-cover object-center flex-shrink-0 rounded-md mr-4"/>
+        </div>
+      <div class="text-left grid content-evenly w-full">
+        <div class="flex w-full justify-between">
+          <h2 class="text-t-main">
+            <%= activity.name%>
+          </h2>
+          <span class="mr-5">
+            <%=number_to_currency activity.amount%>
+          </span>
+        </div>
+        <span class="text-gray-b text-sm"><%= activity.created_at.strftime("%d %b %Y")%></span>
+      </div>
+    </div>
+  </div>
+</div>

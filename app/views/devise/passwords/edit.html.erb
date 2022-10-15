@@ -1,0 +1,23 @@
+<%= render partial: 'layouts/nav/navbar_devise',  locals: {name: 'Change Password', btn:'Save' } %>
+<section class="xs:w-full flex flex-col w-full h-screen bg-gray">
+  <div class="w-full lg:max-w-lg md:mx-auto pt-3 mb-auto">
+    <%= form_for(resource, as: resource_name,html: {'data-turbo' => "false"}, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <% if resource.errors.any? %>
+        <div class="flex pr-3 pl-3">
+          <div class="alert bg-red-100  rounded-lg py-5 px-6 mb-3 text-base inline-flex flex-wrap items-center w-full">
+            <%= render "devise/shared/error_messages", resource: resource %>
+          </div>
+        </div>
+      <%end%>
+      <%= f.hidden_field :reset_password_token %>
+      <div class="grid grid-cols-1">
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "current-password" , placeholder: "Password",  class:"border-x-transparent border-b-divider border-t-1 border-t-divider focus:border-divider  focus:border-x-transparent focus:ring-0 block w-full h-12 max-h-full font-semibol"%>
+        </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm New Password",  class:"border-x-transparent border-b-divider border-t-0 focus:border-divider  focus:border-x-transparent focus:ring-0 block w-full h-12 max-h-full font-semibol"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
