@@ -21,6 +21,7 @@ module.exports = {
         500: '#3778c2',
         700: '#2d5d94',
       },
+      'black': '#000000',
       'white': '#ffffff',
       'secondary': '#5fb523',
       't-main': '#434b54',
