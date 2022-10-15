@@ -10,6 +10,7 @@
 - [ ] TailwindCSS
 
 ### [Video Presentation Link](https://www.loom.com/share/027dc24ffb754aab86db457fddc06530)
+### [Demo Link](https://guarded-anchorage-90290.herokuapp.com/)
 ### Install & Setup
 
 To setup and install this sample AlFa Blog project, follow the below steps:
